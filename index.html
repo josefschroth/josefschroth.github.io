@@ -1,47 +1,527 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Josef Schroth | Economist, Bank of Canada</title>
+  <meta name="description" content="Josef Schroth’s research in macro-finance and corporate finance: bank regulation, capital structure, disclosure choice, and financial stability.">
+  <meta name="author" content="Josef Schroth">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2c3e50">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Josef Schroth | Economist, Bank of Canada">
+  <meta property="og:description" content="Research papers, policy contributions, discussions, and conferences in macro-finance and corporate finance.">
+  <!-- Add a canonical URL here once your GitHub Pages address or custom domain is known. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Josef Schroth",
+    "jobTitle": "Economist",
+    "worksFor": {"@type": "Organization", "name": "Bank of Canada"},
+    "email": "mailto:jschroth@bankofcanada.ca",
+    "knowsAbout": ["Macro-finance", "Corporate finance", "Bank regulation", "Capital structure", "Disclosure choice"],
+    "sameAs": ["https://sites.google.com/site/josefschroth/", "https://www.bankofcanada.ca/profile/josef-schroth/"]
+  }
+  </script>
+  <style>
+    /* Edit these variables to change the page's colours and width. */
+    :root {
+      --ink: #333333;
+      --muted: #555555;
+      --primary: #2c3e50;
+      --accent: #2476a7;
+      --hero-blue: #2980b9;
+      --line: #e5e5e5;
+      --radius: 12px;
+      --page-width: 1000px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body { margin: 0; color: var(--ink); background: #fff; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.6; }
+    h1, h2, h3, h4, p { margin: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button { font: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    [hidden] { display: none !important; }
+    .container { max-width: var(--page-width); padding: 0 16px; margin: 0 auto; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    .skip-link { position: fixed; top: 8px; left: 16px; padding: 8px 12px; color: var(--primary); background: #fff; border: 2px solid var(--accent); border-radius: 6px; z-index: 200; transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); }
 
-    <title>My Academic Website</title>
+    /* Sticky navigation; the small-screen menu is progressively enhanced. */
+    .site-header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid #eee; }
+    .navigation { min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { color: var(--primary); font-size: 1.35rem; font-weight: 600; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 20px; padding: 0; margin: 0; list-style: none; }
+    .nav-links a { font-size: 1rem; font-weight: 500; display: block; padding: 14px 0; }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--primary); cursor: pointer; min-width: 44px; min-height: 44px; padding: 9px; }
+    .menu-toggle svg { display: block; width: 26px; height: 26px; }
 
-    <meta name="description"
-          content="Academic research and publications.">
+    /* The embedded photograph makes this HTML file portable. */
+    .hero { background: linear-gradient(135deg, var(--primary), var(--hero-blue)); color: white; text-align: center; padding: 48px 16px; }
+    .hero-photo { display: block; width: 200px; height: 200px; object-fit: cover; border: 4px solid white; border-radius: 50%; margin: 0 auto 20px; }
+    .hero h1 { font-size: 2.5rem; line-height: 1.6; font-weight: 700; }
+    .hero-copy { max-width: 850px; margin: 0 auto; font-size: 1.05rem; color: #f0f5f8; }
+    .hero-social { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 24px; }
+    .hero-social a { width: 44px; height: 48px; display: inline-flex; align-items: center; justify-content: center; color: white; border-radius: 5px; }
+    .hero-social a:hover { background: rgba(255,255,255,.12); }
+    .hero-social a:focus-visible { outline-color: white; }
+    .hero-social svg { width: 36px; height: 36px; }
+
+    /* Research sections and cards follow the reference page's proportions. */
+    .section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+    .section:last-child { border-bottom: 0; }
+    .section-title { display: inline-block; position: relative; font-size: 1.75rem; font-weight: 600; margin-bottom: 16px; }
+    .section-title::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 3px; background: var(--hero-blue); border-radius: 3px; }
+    .research-group + .research-group { margin-top: 32px; }
+    .subsection-title { font-size: 1.125rem; font-weight: 600; margin: 8px 0 12px; }
+    .paper-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .paper { min-width: 0; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,.05); transition: box-shadow .2s, transform .2s; }
+    .paper h3, .paper h4 { font-size: 1.125rem; font-weight: 600; line-height: 1.55; margin: 4px 0 5px; overflow-wrap: anywhere; }
+    .paper-meta, .coauthors, .paper-status { font-size: .9rem; color: var(--muted); }
+    .coauthors { font-style: italic; margin-bottom: 2px; }
+    .paper-meta cite { font-style: italic; }
+    .paper-status { margin-top: 2px; }
+    .paper-links { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 0; row-gap: 5px; margin-top: 8px; }
+    .paper-links > * { line-height: 1.6; }
+    .paper-links > a + a, .paper-links > .summary-toggle:not([hidden]) + a { border-left: 1px solid #999; margin-left: 8px; padding-left: 8px; }
+    .paper-links a { display: inline-block; }
+    .summary-toggle { border: 0; border-radius: 0; padding: 0; background: transparent; color: var(--accent); cursor: pointer; text-align: left; }
+    .summary-toggle:hover { text-decoration: underline; }
+    .paper-summary { margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; color: #444; }
+    .discussion-list { list-style: none; padding: 0; margin: 8px 0 0; }
+    .discussion { padding: 18px 0; border-bottom: 1px solid #eee; }
+    .discussion:first-child { padding-top: 8px; }
+    .discussion:last-child { padding-bottom: 0; border-bottom: 0; }
+    .discussion h3 { font-size: 1.05rem; font-weight: 500; line-height: 1.6; }
+    .discussion-meta { margin-top: 3px; color: var(--muted); font-size: .9rem; }
+    .conference-list { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 14px; }
+    .conference-list li { font-size: 1.05rem; }
+    .cv-button { display: inline-flex; align-items: center; gap: 9px; margin-top: 12px; padding: 11px 20px; background: var(--accent); color: white; border-radius: var(--radius); font-weight: 500; }
+    .cv-button svg { width: 20px; height: 20px; }
+    .cv-button:hover { background: var(--primary); text-decoration: none; }
+    address { margin-top: 8px; font-style: normal; }
+    address p + p { margin-top: 3px; }
+    .contact-email { margin-top: 14px; overflow-wrap: anywhere; }
+    .site-footer { background: var(--primary); color: white; padding: 20px 16px; text-align: center; font-size: .875rem; }
+    .site-footer a { color: white; }
+    .footer-separator { margin: 0 6px; }
+
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      .paper:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+    }
+    @media (max-width: 800px) {
+      .navigation { flex-wrap: wrap; gap: 0; }
+      .brand { padding: 10px 0; }
+      .nav-links { width: 100%; flex-wrap: wrap; gap: 0 20px; padding-bottom: 8px; }
+      .nav-links a { padding: 7px 0; }
+      .js .menu-toggle { display: block; }
+      .js .nav-links { display: none; padding: 8px 0 14px; border-top: 1px solid var(--line); }
+      .js .nav-links.is-open { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 40px 20px; }
+      .hero-photo { width: 160px; height: 160px; margin-bottom: 16px; }
+      .hero h1 { font-size: 2.25rem; line-height: 1.35; margin-bottom: 12px; }
+      .hero-copy { font-size: 1rem; }
+      .hero-copy p + p { margin-top: 8px; }
+      .section { padding: 40px 0; }
+      .paper { padding: 18px; }
+      .paper h3, .paper h4 { font-size: 1.0625rem; }
+      .section-title { font-size: 1.6rem; }
+      .site-footer span, .site-footer time { display: inline; }
+      .footer-separator { display: block !important; height: 4px; visibility: hidden; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+    @media print {
+      .site-header, .hero-social, .skip-link, .summary-toggle, .site-footer { display: none !important; }
+      .hero { background: none; color: #111; padding: 12px 0 24px; }
+      .hero-copy { color: #333; }
+      .hero-photo { width: 100px; height: 100px; border-color: #ddd; }
+      .section { padding: 20px 0; }
+      .paper { box-shadow: none; break-inside: avoid; }
+      .paper-summary[hidden] { display: block !important; }
+      .paper-links > a { border: 0 !important; padding-left: 0 !important; margin-right: 10px; }
+      a, .cv-button { color: #111; background: none; }
+    }
+  </style>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    <h1>My Academic Website</h1>
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="container navigation" aria-label="Main navigation">
+      <a class="brand" href="#hero">Josef Schroth</a>
+      <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="#research">Research</a></li>
+        <li><a href="#policy">Policy</a></li>
+        <li><a href="#discussions">Discussions</a></li>
+        <li><a href="#conferences">Conferences</a></li>
+        <li><a href="https://drive.google.com/file/d/1IP-ZIu2JD3tHKI4UbSVM6LrpLMyhV8nR/view" target="_blank" rel="noopener noreferrer">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <h2>About</h2>
+  <!-- INTRODUCTION: replace the image's src with "images/portrait.jpg" to use your own file.
+       Portrait source: https://www.bankofcanada.ca/profile/josef-schroth/ -->
+  <section class="hero" id="hero" aria-labelledby="page-title">
+    <img class="hero-photo" src="data:image/jpeg;base64,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" alt="Portrait of Josef Schroth" width="200" height="200" fetchpriority="high">
+    <h1 id="page-title">Josef Schroth</h1>
+    <div class="hero-copy">
+      <p>Hello and welcome! I work as an economist at Bank of Canada.</p>
+      <p>My research interests are in macro-finance and corporate finance.</p>
+      <p>Specific topics are bank regulation, capital structure and disclosure choice.</p>
+    </div>
+    <div class="hero-social" aria-label="Contact and curriculum vitae">
+      <a href="mailto:jschroth@bankofcanada.ca" aria-label="Email Josef Schroth" title="Email">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4a2 2 0 0 0-2 2v.5l11 7.2 11-7.2V6a2 2 0 0 0-2-2H3Zm20 5-10.45 6.84a1 1 0 0 1-1.1 0L1 9v9a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V9Z"/></svg>
+      </a>
+      <a href="https://drive.google.com/file/d/1IP-ZIu2JD3tHKI4UbSVM6LrpLMyhV8nR/view" target="_blank" rel="noopener noreferrer" aria-label="Open curriculum vitae" title="Curriculum vitae">
+        <svg viewBox="0 0 28 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 1h12l7 7v22H5zM17 1v8h7M9 22h11M9 26h11"/><text x="8" y="18" fill="currentColor" stroke="none" font-size="8" font-family="Arial,sans-serif" font-weight="700">CV</text></svg>
+      </a>
+    </div>
+  </section>
 
-    <p>
-        Welcome to my personal academic website.
-        My research focuses on economics and finance.
-    </p>
+  <main id="main" tabindex="-1">
+    <!-- RESEARCH: every title, summary, and document link is in the HTML. -->
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <h2 class="section-title" id="research-title">Research</h2>
+        <section class="research-group" aria-labelledby="publications-title">
+          <h3 class="subsection-title" id="publications-title">Publications</h3>
+          <div class="paper-list">
+          <article class="paper" id="liquidity-services">
+            <h4>Macroprudential regulation and banks’ supply of liquidity services</h4>
+            <p class="paper-meta"><time datetime="2026">2026</time> · <cite>Journal of Financial Economics</cite></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-liquidity-services" hidden>Summary<span class="sr-only">: Macroprudential regulation and banks’ supply of liquidity services</span></button>
+              <a href="https://drive.google.com/file/d/1--6ex0p2ADlczUSH2JcWVhoiZA9IY7sg/view" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://drive.google.com/file/d/12nCfm6GNjUtOCxiG7blC8-4Iuq7qqUbw/view" target="_blank" rel="noopener noreferrer">Presentation</a>
+            </div>
+            <p class="paper-summary" id="summary-liquidity-services">When banks retain earnings to guard against potential losses from high-risk activities, the additional balance sheet space results in mispricing of low-risk activities. This distorts banks’ franchise values down and lowers their ability to retain earnings, leading to lower financial stability.</p>
+          </article>
+          <article class="paper" id="capital-flows">
+            <h4>Capital Flows and Growth across Developing Countries</h4>
+            <p class="paper-meta"><time datetime="2023">2023</time> · <cite>Journal of International Money and Finance</cite></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-capital-flows" hidden>Summary<span class="sr-only">: Capital Flows and Growth across Developing Countries</span></button>
+              <a href="https://drive.google.com/file/d/18jY7xovPM_zuV3WNGvSpS93zJelDvUvv/view" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://drive.google.com/file/d/165VKHtKu6NLGCZZjtUNd5qtQdvsM02a2/view" target="_blank" rel="noopener noreferrer">Short presentation</a>
+            </div>
+            <p class="paper-summary" id="summary-capital-flows">Foreign direct investment inflows and overall capital outflows are positively related to growth across developing countries when consumer borrowing limits are tighter in developing countries than in developed countries.</p>
+          </article>
+          <article class="paper" id="capital-buffers">
+            <h4>Macroprudential Policy with Capital Buffers</h4>
+            <p class="paper-meta"><time datetime="2021">2021</time> · <cite>Journal of Monetary Economics</cite></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-capital-buffers" hidden>Summary<span class="sr-only">: Macroprudential Policy with Capital Buffers</span></button>
+              <a href="https://drive.google.com/file/d/1LYDjjtwmmbuY7Ovet6pcXsg1f1mN01tx/view" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://drive.google.com/file/d/1gNQDKpA9gG92bH3d6tx85YI6wtYbT5cS/view" target="_blank" rel="noopener noreferrer">Presentation</a>
+              <a href="https://drive.google.com/file/d/1fYu8rcSmRGTUF0855nNjaOTCpBHMLuzs/view" target="_blank" rel="noopener noreferrer">Non-technical presentation</a>
+              <a href="https://sites.law.duke.edu/thefinregblog/2019/07/30/macroprudential-policy-with-capital-buffers/" target="_blank" rel="noopener noreferrer">Blog post</a>
+            </div>
+            <p class="paper-summary" id="summary-capital-buffers">Optimal capital buffers should be large eventually but small in the aftermath of financial crises such that their anticipation does not adversely affect market participants’ expectations about bank moral hazard during crises.</p>
+          </article>
+          <article class="paper" id="bank-bailouts">
+            <h4>On the Distributional Effects of Bank Bailouts</h4>
+            <p class="paper-meta"><time datetime="2021">2021</time> · <cite>Review of Economic Dynamics</cite></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-bank-bailouts" hidden>Summary<span class="sr-only">: On the Distributional Effects of Bank Bailouts</span></button>
+              <a href="https://drive.google.com/file/d/1Xh9qMha49dEViomQax2uLnaduFms7Jls/view" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://drive.google.com/file/d/1dZICp04wTcKXA7gQNrtunNshkMx3QSmP/view" target="_blank" rel="noopener noreferrer">Presentation</a>
+              <a href="https://drive.google.com/file/d/1yjZwfFX-ow-AaEC8A058Q_PsBvE14qI6/view" target="_blank" rel="noopener noreferrer">Non-technical presentation</a>
+              <a href="https://sites.law.duke.edu/thefinregblog/2020/10/27/distributional-effects-of-bank-bailouts/" target="_blank" rel="noopener noreferrer">Blog post</a>
+            </div>
+            <p class="paper-summary" id="summary-bank-bailouts">An important class of financial crisis policy responses provides temporary support to solvent institutions, following Bagehot’s principle. The paper analyzes general equilibrium effects from such policy responses and finds that they redistribute from poor to wealthy households.</p>
+          </article>
+          <article class="paper" id="stock-price-manipulation">
+            <h4>Managerial Compensation and Stock Price Manipulation</h4>
+            <p class="paper-meta"><time datetime="2018">2018</time> · <cite>Journal of Accounting Research</cite></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-stock-price-manipulation" hidden>Summary<span class="sr-only">: Managerial Compensation and Stock Price Manipulation</span></button>
+              <a href="https://drive.google.com/file/d/1kQw48ENPl2vJmzqcadmJu8aN9WqPOsZY/view" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+            <p class="paper-summary" id="summary-stock-price-manipulation">Firm owners pay managers to run firms, but not all pay depends on performance. Some of it depends on how managers communicate with market participants.</p>
+          </article>
+          <article class="paper" id="intermediary-rents">
+            <h4>Optimal Intermediary Rents</h4>
+            <p class="paper-meta"><time datetime="2016">2016</time> · <cite>American Economic Journal: Macroeconomics</cite></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-intermediary-rents" hidden>Summary<span class="sr-only">: Optimal Intermediary Rents</span></button>
+              <a href="https://drive.google.com/file/d/19GvvPLbPN515eMckURIXe1Mg71NTla91/view" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+            <p class="paper-summary" id="summary-intermediary-rents">Regulators should raise bank profitability following a financial crisis to alleviate concerns about bank moral hazard during the crisis. Crises are then less deep but recoveries also take longer.</p>
+          </article>
+          </div>
+        </section>
 
-    <h2>Research Publications</h2>
+        <section class="research-group" aria-labelledby="working-papers-title">
+          <h3 class="subsection-title" id="working-papers-title">Working Papers</h3>
+          <div class="paper-list">
+          <article class="paper" id="manager-incentives">
+            <h4>Time-inconsistent manager incentives</h4>
+            <p class="coauthors">with Jose-Victor Rios-Rull, Tamon Takamura, and Yaz Terajima</p>
+            <p class="paper-meta"><time datetime="2026">2026</time></p>
+            <p class="paper-status">Revision requested at Journal of Corporate Finance</p>
+            <div class="paper-links">
+              <a href="https://www.bankofcanada.ca/2026/07/staff-working-paper-2026-25/" target="_blank" rel="noopener noreferrer">Working paper</a>
+            </div>
+          </article>
+          <article class="paper" id="dividend-restrictions">
+            <h4>Bank dividend restrictions and regulatory commitment</h4>
+            <p class="paper-meta"><time datetime="2025">2025</time></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-dividend-restrictions" hidden>Summary<span class="sr-only">: Bank dividend restrictions and regulatory commitment</span></button>
+              <a href="https://drive.google.com/file/d/1NgAZQviIgeyvymY3BGFBcwm9lGfu7b5H/view" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://drive.google.com/file/d/1-BlT3ccjfpkIBNQ1osY5NpsOuOJuUTFS/view" target="_blank" rel="noopener noreferrer">Presentation</a>
+            </div>
+            <p class="paper-summary" id="summary-dividend-restrictions">Will banks use capital buffers to maintain lending during financial crises? Macroprudential bank regulators can address a time-consistency problem by relying more on time-varying, and less on static, capital buffers.</p>
+          </article>
+          <article class="paper" id="voluntary-disclosure">
+            <h4>On the optimal amount of voluntary disclosure: market monitoring versus managerial bias</h4>
+            <p class="paper-meta"><time datetime="2025">2025</time></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-voluntary-disclosure" hidden>Summary<span class="sr-only">: On the optimal amount of voluntary disclosure: market monitoring versus managerial bias</span></button>
+              <a href="https://drive.google.com/file/d/1G7QcEBvYrQ71SKmucop-Xp6nLNZ7-741/view" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://drive.google.com/file/d/1eon-2aVrgwOKHEwLJc4z7LkWNN3Y545G/view" target="_blank" rel="noopener noreferrer">Short presentation</a>
+            </div>
+            <p class="paper-summary" id="summary-voluntary-disclosure">Managers play a central role in determining how firms’ disclosure policies affect firm valuations, yielding two conditional cross-sectional predictions: (i) there are differences in information disclosure across firms, and (ii) such differences are not related to differences in firm values.</p>
+          </article>
+          <article class="paper" id="banking-unions">
+            <h4>Macroprudential and resolution policies in banking unions</h4>
+            <p class="paper-meta"><time datetime="2023">2023</time></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-banking-unions" hidden>Summary<span class="sr-only">: Macroprudential and resolution policies in banking unions</span></button>
+              <a href="https://drive.google.com/file/d/10v0El3ybe1fR0DQQgg_1m5gdeTsQSdhb/view" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+            <p class="paper-summary" id="summary-banking-unions">To avoid moral hazard of national macroprudential regulators, the usage of resolution funding should be positively correlated across member countries of a banking union. Optimal policies imply time-varying financial stability and economic output that is on average higher net of resolution costs.</p>
+          </article>
+          </div>
+        </section>
 
-    <ul>
-        <li>
-            <a href="paper1.pdf">
-                Research Paper 1
-            </a>
-        </li>
+        <section class="research-group" aria-labelledby="ongoing-title">
+          <h3 class="subsection-title" id="ongoing-title">Ongoing Projects</h3>
+          <div class="paper-list">
+          <article class="paper" id="household-heterogeneity">
+            <h4>Bank regulation and household heterogeneity</h4>
+            <p class="coauthors">with Keith Kuester, Lilia Maliar, Serguei Maliar, and Fabio Stohler</p>
+            <p class="paper-meta"><time datetime="2026">2026</time></p>
+          </article>
+          </div>
+        </section>
+      </div>
+    </section>
 
-        <li>
-            <a href="paper2.pdf">
-                Research Paper 2
-            </a>
-        </li>
-    </ul>
+    <!-- POLICY CONTRIBUTIONS -->
+    <section class="section" id="policy" aria-labelledby="policy-title">
+      <div class="container">
+        <h2 class="section-title" id="policy-title">Policy contributions</h2>
+        <div class="paper-list">
+          <article class="paper" id="liquidity-regulation">
+            <h3>Unintended consequences of liquidity regulation</h3>
+            <p class="paper-meta"><time datetime="2025">2025</time> · <cite>Bank of Canada</cite></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-liquidity-regulation" hidden>Summary<span class="sr-only">: Unintended consequences of liquidity regulation</span></button>
+              <a href="https://www.bankofcanada.ca/2025/12/staff-analytical-note-2025-28/" target="_blank" rel="noopener noreferrer">Read note</a>
+            </div>
+            <p class="paper-summary" id="summary-liquidity-regulation">When a bank holds a lot of safe assets, it is well situated to deal with funding stress. But when all banks hold a lot of safe assets, a pecuniary externality implies that their (wholesale) funding costs increase. This reduces banks’ ability to hold capital buffers and thus, paradoxically, increases the frequency of funding stress.</p>
+          </article>
+          <article class="paper" id="anticipating-capital-buffers">
+            <h3>Anticipating changes in bank capital buffer requirements</h3>
+            <p class="paper-meta"><time datetime="2025">2025</time> · <cite>Bank of Canada</cite></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-anticipating-capital-buffers" hidden>Summary<span class="sr-only">: Anticipating changes in bank capital buffer requirements</span></button>
+              <a href="https://www.bankofcanada.ca/2025/12/staff-analytical-note-2025-27/" target="_blank" rel="noopener noreferrer">Read note</a>
+            </div>
+            <p class="paper-summary" id="summary-anticipating-capital-buffers">Time-varying capital buffer requirements are a powerful tool that allow bank regulators to avoid severe financial stress without the cost of imposing very high levels of capital. However, this tool is only effective if banks understand how it is used. I present a model that banks and financial market participants can use to anticipate how time-varying capital buffer requirements change over time.</p>
+          </article>
+          <article class="paper" id="higher-capital-requirement">
+            <h3>Higher capital requirement on banks: Are they worth it?</h3>
+            <p class="paper-meta"><time datetime="2024">2024</time> · <cite>Journal of Financial Transformation</cite></p>
+            <div class="paper-links">
+              <a href="https://drive.google.com/file/d/1ZPZP-hQgDA_tCFDUmNyLXFhn1c-_ngiI/view" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </article>
+          <article class="paper" id="financial-downturns">
+            <h3>Can regulating bank capital help prevent and mitigate financial downturns?</h3>
+            <p class="paper-meta"><time datetime="2021">2021</time> · <cite>Bank of Canada</cite></p>
+            <div class="paper-links">
+              <button class="summary-toggle" type="button" aria-expanded="true" aria-controls="summary-financial-downturns" hidden>Summary<span class="sr-only">: Can regulating bank capital help prevent and mitigate financial downturns?</span></button>
+              <a href="https://www.bankofcanada.ca/2021/06/staff-analytical-note-2021-12/" target="_blank" rel="noopener noreferrer">Read note</a>
+            </div>
+            <p class="paper-summary" id="summary-financial-downturns">This note illustrates how insights for macroprudential policy can be obtained from a parsimonious structural model that endogenizes key elements of the financial system (funding market pressure, financial crises, banks’ dividend policy and voluntary capital buffers).</p>
+          </article>
+          <article class="paper" id="basel-iii">
+            <h3>Assessing the impact of Basel III: Evidence from macroeconomic models</h3>
+            <p class="paper-meta"><time datetime="2021">2021</time> · <cite>Bank for International Settlements</cite></p>
+            <div class="paper-links">
+              <a href="https://www.bis.org/bcbs/publ/wp38.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <h2>Contact</h2>
+    <!-- DISCUSSIONS -->
+    <section class="section" id="discussions" aria-labelledby="discussions-title">
+      <div class="container">
+        <h2 class="section-title" id="discussions-title">Discussions</h2>
+        <ul class="discussion-list">
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1jxdYWfOEcJCIZhV6IoOD-9ISHbr06Pbb/view" target="_blank" rel="noopener noreferrer">When Banks Fail - Depositor Attention and the Cost of Funding for Survivors</a></h3>
+            <p class="discussion-meta">Brian Jonghwan Lee and Stefan Walz · <time datetime="2026">2026</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1z2upHNNhJZCCe_6wQQiRRqiR2JntUIH-/view" target="_blank" rel="noopener noreferrer">From losses to buffer – Calibrating the positive neutral CCyB rate in the euro area</a></h3>
+            <p class="discussion-meta">Giorgia De Nora, Ana Pereira, Mara Pirovano and Florian Stammwitz · <time datetime="2025">2025</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1390qRI0Ln1ctD-a5yEs6JitDu5s8TNnL/view" target="_blank" rel="noopener noreferrer">Interest Rate Risk and Cross-Sectional Effects of Micro-Prudential Regulation</a></h3>
+            <p class="discussion-meta">Juliane Begenau, Vadim Elenev and Tim Landvoigt · <time datetime="2025">2025</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/14GoOAi-h9-Gq4SLbVa_eGt6XtwCbELcD/view" target="_blank" rel="noopener noreferrer">Mortgage Structure, Financial Stability, and Risk Sharing</a></h3>
+            <p class="discussion-meta">Vadim Elenev and Lu Liu · <time datetime="2025">2025</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/12u9BwKnBTRDlDox4GskyrPJV_VLzYdoi/view" target="_blank" rel="noopener noreferrer">Capital requirements and macroeconomic stability in light of monetary tightening</a></h3>
+            <p class="discussion-meta">Aurelien Espic, Lisa Kerdelhue and Julien Matheron · <time datetime="2023">2023</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1md4qReCCmQ3SxqM0rmJTqcsG2yWuQXG7/view" target="_blank" rel="noopener noreferrer">What if Consumers were Informed about Credit Reporting?</a></h3>
+            <p class="discussion-meta">Li Liao, Xiumin Martin, Ni Wang, Zhengwei Wang and Jun Yang · <time datetime="2022">2022</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1Ful2LjU1M5PDD0NclW7hEChBZSPrnS0-/view" target="_blank" rel="noopener noreferrer">Aggregated Compensation Peer Group Disclosure and Managerial Labor Market Competition</a></h3>
+            <p class="discussion-meta">Rui Gao and Yifei Lu · <time datetime="2022">2022</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1gcldzZhrHtVuBuKSItwkrOkSjUBYjHyS/view" target="_blank" rel="noopener noreferrer">Macroprudential Taxes, Ratios, and Rents</a></h3>
+            <p class="discussion-meta">Daniel Harper and Anton Korinek · <time datetime="2021">2021</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1lHZ9FW9qlGszna6_P90RFAznIQXEbwij/view" target="_blank" rel="noopener noreferrer">Benefits of Macro-Prudential Policy in Low Interest Rate Environments</a></h3>
+            <p class="discussion-meta">Alejandro van der Ghote · <time datetime="2021">2021</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1VlqJ3EpeHWUdPUbuUGD5wutBSVrbHtUs/view" target="_blank" rel="noopener noreferrer">A Macroeconomic Model with Financially Constrained Producers and Intermediaries</a></h3>
+            <p class="discussion-meta">Vadim Elenev, Tim Landvoigt and Stijn Van Nieuwerburgh · <time datetime="2017">2017</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1S3Ete8qNVfMlxo50ffe-s5CHY1sm3Qj0/view" target="_blank" rel="noopener noreferrer">The I Theory of Money</a></h3>
+            <p class="discussion-meta">Markus Brunnermeier and Yuliy Sannikov · <time datetime="2014">2014</time></p>
+          </li>
+          <li class="discussion">
+            <h3><a href="https://drive.google.com/file/d/1TZG1gzJAvuo4FZying2ZXxqo_5pW4szv/view" target="_blank" rel="noopener noreferrer">A Macroeconomic Framework for Quantifying Systemic Risk</a></h3>
+            <p class="discussion-meta">Zhiguo He and Arvind Krishnamurthy · <time datetime="2012">2012</time></p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-    <p>Contact information</p>
+    <!-- CONFERENCES -->
+    <section class="section" id="conferences" aria-labelledby="conferences-title">
+      <div class="container">
+        <h2 class="section-title" id="conferences-title">Conferences</h2>
+        <ul class="conference-list">
+          <li><a href="https://fsrc2025.vfairs.ca/" target="_blank" rel="noopener noreferrer">2025 Bank of Canada Macro-Finance Conference</a></li>
+          <li>2023 Bank of Canada Macro-Finance Conference</li>
+          <li><a href="https://www.bankofcanada.ca/2021/05/4th-bank-of-canada-fsrc-macro-finance-conference/" target="_blank" rel="noopener noreferrer">2021 Bank of Canada Macro-Finance Conference</a></li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- CURRICULUM VITAE -->
+    <section class="section" id="cv" aria-labelledby="cv-title">
+      <div class="container">
+        <h2 class="section-title" id="cv-title">Curriculum Vitae</h2>
+        <div>
+          <a class="cv-button" href="https://drive.google.com/file/d/1IP-ZIu2JD3tHKI4UbSVM6LrpLMyhV8nR/view" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H5v20h14V7l-5-5ZM14 2v6h5M8 13h8M8 17h8"/></svg>
+            View CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title" id="contact-title">Contact</h2>
+        <address>
+          <p>Josef Schroth</p>
+          <p>Bank of Canada</p>
+          <p class="contact-email">Email: <a href="mailto:jschroth@bankofcanada.ca">jschroth@bankofcanada.ca</a></p>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="copyright-year">2026</span> Josef Schroth</span>
+    <span class="footer-separator" aria-hidden="true">|</span>
+    <span>Last updated: <time datetime="2026-11-15">November 15, 2026</time></span>
+  </footer>
+
+  <script>
+    // Without JavaScript, navigation and all summaries remain visible.
+    document.documentElement.classList.add('js');
+    const summaryButtons = [...document.querySelectorAll('.summary-toggle')];
+
+    function setSummary(button, expanded) {
+      const paragraph = document.getElementById(button.getAttribute('aria-controls'));
+      paragraph.hidden = !expanded;
+      button.setAttribute('aria-expanded', String(expanded));
+    }
+
+    for (const button of summaryButtons) {
+      button.hidden = false;
+      setSummary(button, false);
+      button.addEventListener('click', () => setSummary(button, button.getAttribute('aria-expanded') !== 'true'));
+    }
+
+    function revealLinkedSummary() {
+      let targetId;
+      try { targetId = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+      const button = summaryButtons.find(item => item.getAttribute('aria-controls') === targetId);
+      if (button) setSummary(button, true);
+    }
+    revealLinkedSummary();
+    window.addEventListener('hashchange', revealLinkedSummary);
+
+    const menuButton = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('primary-nav');
+    function setMenu(open, restoreFocus = false) {
+      menu.classList.toggle('is-open', open);
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      if (restoreFocus) menuButton.focus();
+    }
+    menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('click', event => { if (event.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') setMenu(false, true);
+    });
+    document.addEventListener('click', event => {
+      if (!event.target.closest('.navigation')) setMenu(false);
+    });
+    window.matchMedia('(min-width: 801px)').addEventListener('change', event => {
+      if (event.matches) setMenu(false);
+    });
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
